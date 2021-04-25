@@ -23,3 +23,14 @@
   overflow: hidden;
   background-color: #f1f1f1;
 }
+
+.container {
+  min-width: 320px;
+  max-width: 800px;
+  text-align: center;
+}
+
+.slider {
+  width: 50%;
+  margin: 20px auto;
+}

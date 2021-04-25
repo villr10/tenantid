@@ -16,19 +16,40 @@
   <form>
   <div class="container"
    <p> </p>
-   <label class="lead" for="tid" id="tlabel">Input the Microsoft Tenant ID:</label><br>
-    <br><input type="text" id="tid" ><br>
+   <br>
+   <br>
+   <p class="h6">Microsoft Tenant ID</p>
+   
+   <input type="text" id="tid" ><br>
     <br><button type='button' class="btn btn-secondary btn-sm" id="checkPage">Create Link</button>
+	<p> </p>
+	
 	<p> </p>
 	<div id = "outputdiv">
 	<p  id="output"> </p>
 	</div>
-	<h6> What is this tool? </h6>
-	<p class="lead"> <small> This is a simple tool that allows you to input a <a href="https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant">Microsoft Tenant ID</a> and it will copy the entire link back to your clipboard. 
+	<h6> Information: </h6>
+	<p class="lead"> <small> This is a simple tool that allows you to input a <a href="https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant">Microsoft Azure Tenant ID</a> and it will copy the entire link back to your clipboard. 
 	For example: you give it Tenant ID <mark>xxxx-yyyy-dddd-mmmm</mark> and it will return the following link: https://partner.microsoft.com/commerce/customers/<mark>xxxx-yyyy-dddd-mmmm</mark>/subscriptions to your clipboard. </small> </p>
-	</div>
-	</form>
 	
+	</form>
+	<br>
+	<br>
+	<br>
+	<form>
+	<p class="h6">Domain Name</p>
+	<input type="text" id="DomainBox" ><br>
+	<br><button type='button' class="btn btn-secondary btn-sm" id="checkTenant" >Find Tenant ID</button>
+	<p> </p>
+	<div id = "outputdivdomain">
+	
+	<p  id="outputdomain"> </p>
+	</div>
+	<h6> Information: </h6>
+	<p class="lead"> <small> This tool allows you to input a domain (for example: contoso.com) and it will provide the Azure Tenant ID of the domain. This tool uses a public Microsoft API. If you receive an error its likely that the domain was not found. </small> </p>
+	
+	</form>
+	</div>
 
 </body>
 

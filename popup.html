@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Link Creator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="popup.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="styles.css" >
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </head>
+  
+	<body>
+  
+
+
+  <form>
+  <div class="container"
+   <p> </p>
+   <br>
+   <br>
+   <img src="azureico.png" p class="h6"> Microsoft Tenant ID</p>
+   
+   <input type="text" id="tid" ><br>
+    <br><button type='button' class="btn btn-secondary btn-sm" id="checkPage">Create Link</button>
+	<p> </p>
+	
+	<p> </p>
+	<div id = "outputdiv">
+	<p  id="output"> </p>
+	</div>
+	<button type="button" class="collapsible"> <img src="infoico.png" width="16" height="16"> More Information about this tool </button>
+<div class="content">
+  <p> </P
+  <p class="lead"> <small> This is a simple tool that allows you to input a <a href="https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant">Microsoft Azure Tenant ID</a> and it will copy the entire link back to your clipboard. 
+	For example: you give it Tenant ID <mark>xxxx-yyyy-dddd-mmmm</mark> and it will return the following link: https://partner.microsoft.com/commerce/customers/<mark>xxxx-yyyy-dddd-mmmm</mark>/subscriptions to your clipboard. </small> </p>
+</div>
+	
+	</form>
+	<br>
+	<br>
+	<br>
+	<form>
+	<img src="domainico.png" p class="h6"> Domain Name</p>
+	<input type="text" id="DomainBox" ><br>
+	<br><button type='button' class="btn btn-secondary btn-sm" id="checkTenant" >Find Tenant ID</button>
+	<p> </p>
+	<div id = "outputdivdomain">
+	
+	<p  id="outputdomain"> </p>
+	</div>
+	
+
+<button type="button" class="collapsible"> <img src="infoico.png" width="16" height="16"> More Information about this tool </button>
+<div class="content">
+  <p> </P
+  <p class="lead"> <small> This tool allows you to input a domain (for example: contoso.com) and it will provide the Azure Tenant ID of the domain. This tool uses a public Microsoft API. If you receive an error its likely that the domain was not found.</small> </p>
+</div>
+<p> </p>
+	</form>
+	</div>
+
+</body>
+
+</html>

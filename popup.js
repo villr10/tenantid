@@ -3,6 +3,7 @@
 
 window.onload = function(){ 
 document.getElementById("checkPage").addEventListener("click", myFunction);
+document.getElementById("checkTenant").addEventListener("click", checkTenantAPI);
 
 function myFunction() {
   var textbox = document.getElementById("tid").value;
@@ -22,5 +23,28 @@ function copy(str) {
   el.select();
   document.execCommand('copy');
   document.body.removeChild(el);
+}
+
+function checkTenantAPI() {
+  var DomainBox = document.getElementById("DomainBox").value;
+  var xmlHttp = new XMLHttpRequest();
+  var apiLink = "https://login.microsoftonline.com/"+DomainBox+"/.well-known/openid-configuration";
+ 
+ try {
+  xmlHttp.open( "GET", apiLink, false ); // false for synchronous request
+  xmlHttp.send( null );
+  var responseJson = JSON.parse(xmlHttp.responseText);
+  var responseUnsanatized = responseJson.issuer
+  var sanatizedResponse = responseUnsanatized.replaceAll("https://sts.windows.net","");
+  fulllink = "https://partner.microsoft.com/commerce/customers"+sanatizedResponse+"subscriptions"
+  document.getElementById("outputdomain").innerHTML = "Tenant ID for " + DomainBox + " has been copied into the clipboard: " + fulllink;
+  document.getElementById("outputdivdomain").classList.remove('alert', 'alert-danger');
+  document.getElementById("outputdivdomain").classList.add('alert', 'alert-success');
+  copy(fulllink)
+ }
+ catch(err) {
+	 document.getElementById("outputdomain").innerHTML = "There was an error finding this tenant. Make sure the domain is correct.";
+	 document.getElementById("outputdivdomain").classList.add('alert', 'alert-danger');
+ }
 }
 }

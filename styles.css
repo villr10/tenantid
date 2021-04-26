@@ -37,4 +37,6 @@
 
 .alert-success {
 	max-height: 100%;
+	word-wrap: break-word;
+	
 }
